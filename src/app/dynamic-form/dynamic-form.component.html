@@ -1,0 +1,168 @@
+<!-- <div>
+    <h2 
+      (click)="switchForm('login')" 
+      [class.active]="currentForm === 'login'"
+      [class.invalid]="!loginFormValid"
+    >
+      Login<span *ngIf="!loginFormValid" class="text-danger"> *</span>
+    </h2>
+    <h2 
+      (click)="switchForm('signup')" 
+      [class.active]="currentForm === 'signup'"
+      [class.invalid]="!signupFormValid"
+    >
+      Signup<span *ngIf="!signupFormValid" class="text-danger"> *</span>
+    </h2>
+  
+    <form [formGroup]="currentForm === 'login' ? loginForm : signupForm" class="p-4">
+      <div *ngIf="currentForm === 'login'">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input id="username" formControlName="username" class="form-control" />
+          <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" />
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label>
+            <input type="checkbox" formControlName="rememberMe" /> Remember Me
+          </label>
+        </div>
+  
+        <div class="mb-3">
+          <label for="additionalField" class="form-label">Additional Field:</label>
+          <input id="additionalField" formControlName="additionalField" class="form-control" />
+        </div>
+      </div>
+  
+      <div *ngIf="currentForm === 'signup'">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input id="email" formControlName="email" class="form-control" />
+          <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
+            Valid email is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input id="username" formControlName="username" class="form-control" />
+          <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" />
+          <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password:</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" />
+          <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="text-danger">
+            Confirm Password is required.
+          </div>
+        </div>
+      </div>
+  
+      <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  ----------------------- -->
+
+  <div>
+    <h2 
+      (click)="switchForm('login')" 
+      [class.active]="currentForm === 'login'"
+    >
+      Login<span *ngIf="showLoginError" class="text-danger"> *</span>
+    </h2>
+    <h2 
+      (click)="switchForm('signup')" 
+      [class.active]="currentForm === 'signup'"
+    >
+      Signup<span *ngIf="showSignupError" class="text-danger"> *</span>
+    </h2>
+  
+    <form [formGroup]="currentForm === 'login' ? loginForm : signupForm" class="p-4">
+      <div *ngIf="currentForm === 'login'">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input id="username" formControlName="username" class="form-control" />
+          <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" />
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label>
+            <input type="checkbox" formControlName="rememberMe" /> Remember Me
+          </label>
+        </div>
+  
+        <div class="mb-3">
+          <label for="additionalField" class="form-label">Additional Field:</label>
+          <input id="additionalField" formControlName="additionalField" class="form-control" />
+        </div>
+      </div>
+  
+      <div *ngIf="currentForm === 'signup'">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input id="email" formControlName="email" class="form-control" />
+          <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched" class="text-danger">
+            Valid email is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input id="username" formControlName="username" class="form-control" />
+          <div *ngIf="signupForm.get('username')?.invalid && signupForm.get('username')?.touched" class="text-danger">
+            Username is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" id="password" formControlName="password" class="form-control" />
+          <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched" class="text-danger">
+            Password is required.
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password:</label>
+          <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control" />
+          <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched" class="text-danger">
+            Confirm Password is required.
+          </div>
+        </div>
+      </div>
+  
+      <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
+

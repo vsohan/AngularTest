@@ -1,0 +1,29 @@
+/* .active {
+    color: blue; /* Style for active menu item */
+    /* font-weight: bold;
+    cursor: pointer; Change cursor to indicate clickable */
+  /* } */ 
+/*   
+  .invalid {
+    color: red; /* Style for invalid form */
+  /* } */ 
+  
+  /* .text-danger {
+    color: red; /* Style for error messages */
+  /* } */ 
+  
+
+   .active {
+    color: blue; /* Style for active menu item */
+    font-weight: bold;
+    cursor: pointer; /* Change cursor to indicate clickable */
+  }
+  
+  .invalid {
+    color: red; /* Style for invalid form */
+  }
+  
+  .text-danger {
+    color: red; /* Style for error messages */
+  }
+  
